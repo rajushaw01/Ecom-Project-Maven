@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<hibernate-configuration>-->
+<hibernate-configuration>
+<!-- session Factory -->
+    <session-factory>
+        <!-- Database Connection Settings driver,url,username,password -->
+        <!--<property name="connection.driver_class">com.mysql.jdbc.Driver</property>-->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/ecommerce_db</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">raju</property>
+        <!-- JDBC connection pool settings ... using built-in test pool -->
+        <property name="connection.pool_size">1</property>
+        <!-- Hibernate Property dialect sql, schema -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Select our SQL dialect -->
+        <!-- we use MySQL5Dialect for the mysql version  5 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property><!--dialect-->
+		
+        <!-- Echo the SQL to stdout -->
+        <property name="hibernate.show_sql">true</property><!--show_sql-->
+		<!-- Set the current session context -->
+		<property name="hibernate.current_session_context_class">thread</property><!--current_session_context_class-->
+    </session-factory>
+</hibernate-configuration>
+
+<!--
+hibernate.hbm2ddl.auto
+
+validate: validate the schema, makes no changes to the database.
+update: update the schema.
+create: creates the schema, destroying previous data.
+create-drop: drop the schema when the SessionFactory is closed explicitly, typically when the application is stopped.
+-->
+
+
